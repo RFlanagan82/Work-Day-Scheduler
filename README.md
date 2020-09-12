@@ -27,7 +27,7 @@ All of the files necessary to access this website are available inside [this rep
 
 - On 9-11-20, TA - Christina Starr helped me troubleshoot connecting my var hour and var planEntryInput to my HTML through using (this)statements along with targeting the sibling or children page elements. Doing this would help me be able to take in user inputs and appropriately store them in local storage.
 
-![Image of Local Storage](Assets/Work Day Scheduler - local storage.png)
+![](Assets/Work%20Day%20Scheduler%20-%20local%20storage.png)
 
 -On 9-11-2020, my tutor Andrew Hardemon ,helped me better understand how to set up the timeUpdater function to dynamically touch each time block, connect it to Military time using moment.JS script and assign the color principles to their respective blocks.
 
