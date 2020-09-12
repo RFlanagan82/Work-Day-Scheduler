@@ -35,7 +35,6 @@
       <div class="row">
         <div class="col-sm-2 border hour time-block" id="hourRow9">9AM</div>
         <textarea class="col-sm-8 border planEntry"></textarea>
-          <!--<textarea class="planEntry" id="planText"></textarea>-->
         <button class="col-sm-2 border saveBtn">
           <i class="fa fa-lock" style="font-size:36px"></i>
         </button>
@@ -106,12 +105,13 @@
 
         $(document).ready(function(){
         
+
+        //WHEN I open the planner
+        //THEN the current day is displayed at the top of the calendar
         function getTime(){
           var currentHour = moment().hour();
           console.log("Current Hour is " + currentHour);
 
-          //WHEN I open the planner
-          //THEN the current day is displayed at the top of the calendar
           var calendarEl = $(".container");
           var currentDay = $("#currentDay");
 
@@ -119,63 +119,21 @@
           currentDay.text(today);
         };
 
+        //Call getTime function
         getTime();
 
-        function getHour(num){
-          var time = num + 9;
-          if(time > 12){
-            time = time - 12
-          }
-          return time;
-        }
-
-        function createDivs() {
-          for(var i = 0; i < hoursList.length; i++){
-            var time = getHour(i)
-            var div = $("<div>");
-            div.addClass("row");
-            var timeBlock = $("<div>");
-            timeBlock.addClass("time-block, col-sm-2, border, hour");
-            timeBlock.attr("id", ("hourRow"+time)) //&{time}
-            var textarea = $("<textarea>");
-            textarea.addClass("col-sm-8, border, planEntry");
-            var saveBtn = $("<button>");
-            saveBtn.addClass("col-sm-2 border saveBtn");
-            var lockIcon = $("<i>");
-            lockIcon.addClass("fa fa-lock");
-            lockIcon.attr("style", "font-size:36px");
-            saveBtn.append(lockIcon);
-
-            //Put everything on main div
-            div.append(timeBlock);
-            div.append(textarea);
-            div.append(saveBtn);
-
-            var container = $(".container")
-            container.append(div);
-          }
-        }
-
-
-          //I need a way to identify whether the currentHour variable matches the #hourRow div
-
-
-        
 
         //WHEN I scroll down
         //THEN I am presented with timeblocks for standard business hours
-
+        //WHEN I click into a timeblock
+        //THEN I can enter an event
+        //[***Reference hard coded HTML Divs***]
 
 
         //WHEN I view the timeblocks for that day
         //THEN each timeblock is color coded to indicate whether it is in the past, present, or future
 
-
-
-
-
-        //WHEN I click into a timeblock
-        //THEN I can enter an event
+        //Have to create function that will define hour blocks of time
         function getMilTime(num){
           var time = num
           if(time < 9){
@@ -183,17 +141,22 @@
           }
           return time;
         }
-        //var planEntry = JSON.parse(localStorage.getItem(planEntry));
+    
+        //
         function timeUpdater(){
           var currentHour = moment().hours()
           $(".row").each(function(){
             var hour = $(this).children(".time-block").attr("id")
+            //console.log(hour) to be able to see var hour connect to the hour row in console.
             console.log(hour)
             //use parseInt to get the actual number for the time block.
             hour = parseInt(hour.slice(7))
+            //connect hour variable to military time hour
             hour = getMilTime(hour)
+            //console log to see which hour row is connected to which military time hr
             console.log(hour)
 
+            //if/else conditional to assign what to do with the respective color of the time block element.
             if(hour < currentHour){
               $(this).addClass("past")
             } else if (hour === currentHour){
@@ -208,20 +171,23 @@
         }
         timeUpdater();
 
+        //update timeUpdater every 3 seconds
         var interval = setInterval(timeUpdater, 3000)
   
 
-
-
-        //WHEN I click the save button for that timeblock
+        //WHEN I click the save button 'Lock Icon' for that timeblock
         //THEN the text for that event is saved in local storage
 
+        //need event listener for saveBtn
         $(".saveBtn").on("click", function(event){
           event.preventDefault();
+          //created planEntryInput variable to touch the planEntry sibling div's input.
           var planEntryInput = $(this).siblings(".planEntry").val();
           console.log(planEntryInput);
           //console.log($(this));
           //console.log($(this).siblings(".time-block"));
+
+          //created time variable to touch the time-block sibling div and assigned attribute "id"
           var time = $(this).siblings(".time-block").attr("id");
           console.log(time);
           localStorage.setItem(time, planEntryInput);
@@ -230,6 +196,7 @@
 
         //WHEN I refresh the page
         //THEN the saved events persist
+        //touch specific hour row data input's value under planEntry and takes it out of local storage.
         $("#hourRow9").siblings(".planEntry").val(localStorage.getItem("hourRow9"))
         $("#hourRow10").siblings(".planEntry").val(localStorage.getItem("hourRow10"))
         $("#hourRo11").siblings(".planEntry").val(localStorage.getItem("hourRo11"))
@@ -242,7 +209,7 @@
         $("#hourRow5").siblings(".planEntry").val(localStorage.getItem("hourRow5"))
 
 
-      }); //finishing script tag
+      });
 
 
     </script>

@@ -3,4 +3,12 @@ reate a simple calendar application that allows the user to save events for each
 
 ## Contributions
 
-<!--On 9-10-20, Jada Arnett mentioned using shoelace.io for each table grid building.>
+<!--On 9-10-20, Jada Arnett mentioned using shoelace.io for each table grid building.-->
+
+
+
+
+## Resources 
+
+- [Font Awesome: Lock Icon](https://fontawesome.com/icons/lock)
+- [Research on <textarea>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea)
