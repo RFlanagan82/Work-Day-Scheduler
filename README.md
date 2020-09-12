@@ -7,9 +7,14 @@ Create a simple calendar application that allows the user to save events for eac
 
 This site contains 2 pages in addition to this ReadMe file.
 
--[index.html]()
--[style.css]()
+-[index.html](https://rflanagan82.github.io/Work-Day-Scheduler/)
+-[style.css](https://github.com/RFlanagan82/Work-Day-Scheduler/blob/master/style.css)
 
+## Accepted Criteria
+
+The accepted criteria is found here:
+
+-[Instructions.md](https://github.com/RFlanagan82/Work-Day-Scheduler/blob/master/instructions.md)
 
 ## Usage
 
@@ -21,6 +26,8 @@ All of the files necessary to access this website are available inside [this rep
 - On 9-10-20, Jada Arnett mentioned using shoelace.io for each table grid building.
 
 - On 9-11-20, TA - Christina Starr helped me troubleshoot connecting my var hour and var planEntryInput to my HTML through using (this)statements along with targeting the sibling or children page elements. Doing this would help me be able to take in user inputs and appropriately store them in local storage.
+
+![Image of Local Storage](Assets/Work Day Scheduler - local storage.png)
 
 -On 9-11-2020, my tutor Andrew Hardemon ,helped me better understand how to set up the timeUpdater function to dynamically touch each time block, connect it to Military time using moment.JS script and assign the color principles to their respective blocks.
 
