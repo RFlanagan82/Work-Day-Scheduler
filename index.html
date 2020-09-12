@@ -142,7 +142,7 @@
           return time;
         }
     
-        //
+        //create function that will dynamically connect to real time via Moment.js
         function timeUpdater(){
           var currentHour = moment().hours()
           $(".row").each(function(){
@@ -156,7 +156,8 @@
             //console log to see which hour row is connected to which military time hr
             console.log(hour)
 
-            //if/else conditional to assign what to do with the respective color of the time block element.
+            //use if/else conditional to assign what to do with the respective color of the time block element. 
+            //Used '(this)' to target var hour which connects to HTML element time-block.
             if(hour < currentHour){
               $(this).addClass("past")
             } else if (hour === currentHour){
