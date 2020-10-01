@@ -16,6 +16,9 @@ The accepted criteria is found here:
 
 -[Instructions.md](https://github.com/RFlanagan82/Work-Day-Scheduler/blob/master/instructions.md)
 
+## Link to Deployed Application
+[Click here to access the Work-Day-Scheduler](https://rflanagan82.github.io/Work-Day-Scheduler/)
+
 ## Usage
 
 All of the files necessary to access this website are available inside [this repository](https://github.com/RFlanagan82/Work-Day-Scheduler)
